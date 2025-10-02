@@ -27,11 +27,11 @@ const FadeInSection = ({ children, delay = 0 }: { children: React.ReactNode; del
 // Service card component with hover animations
 const ServiceCard = ({ title, icon, delay = 0 }: { title: string; icon: string; delay?: number }) => (
   <FadeInSection delay={delay}>
-    <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-6 text-center border border-gray-100">
-      <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+    <div className="group card-brand p-6 text-center">
+      <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 text-uranian-blue">
         {icon}
       </div>
-      <h3 className="text-lg font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
+      <h3 className="text-lg font-heading text-english-violet group-hover:text-uranian-blue transition-colors duration-300">
         {title}
       </h3>
     </div>
@@ -41,11 +41,11 @@ const ServiceCard = ({ title, icon, delay = 0 }: { title: string; icon: string; 
 // Feature item component
 const FeatureItem = ({ title, icon, delay = 0 }: { title: string; icon: string; delay?: number }) => (
   <FadeInSection delay={delay}>
-    <div className="flex items-center space-x-4 p-4 rounded-lg hover:bg-blue-50 transition-colors duration-300 group">
-      <div className="text-2xl text-blue-600 group-hover:scale-110 transition-transform duration-300">
+    <div className="flex items-center space-x-4 p-4 rounded-lg hover:bg-uranian-blue/10 transition-colors duration-300 group">
+      <div className="text-2xl text-uranian-blue group-hover:scale-110 transition-transform duration-300">
         {icon}
       </div>
-      <h6 className="text-gray-700 font-medium group-hover:text-blue-700 transition-colors duration-300">
+      <h6 className="text-english-violet font-alternative group-hover:text-slate-gray transition-colors duration-300">
         {title}
       </h6>
     </div>
@@ -93,28 +93,28 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-uranian-blue/5 via-white to-slate-gray/5">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
+        <div className="absolute inset-0 gradient-brand opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Content */}
             <div className="space-y-8">
               <FadeInSection>
-                <h1 className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent leading-tight">
+                <h1 className="text-5xl lg:text-6xl font-heading font-bold gradient-dark bg-clip-text text-transparent leading-tight">
                   {scrapedData.headings.find(h => h.level === 'h1')?.text || 'IT Service'}
                 </h1>
               </FadeInSection>
               
               <FadeInSection delay={200}>
-                <h2 className="text-2xl lg:text-3xl font-semibold text-gray-800 mb-6">
+                <h2 className="text-2xl lg:text-3xl font-heading font-semibold text-english-violet mb-6">
                   Reibungslos. Kompetent.
                 </h2>
               </FadeInSection>
 
               <FadeInSection delay={400}>
-                <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
+                <div className="space-y-4 text-lg text-slate-gray leading-relaxed font-body">
                   {scrapedData.paragraphs.slice(0, 2).map((paragraph, index) => 
                     paragraph.trim() && (
                       <p key={index} className="animate-fade-in">
@@ -127,10 +127,10 @@ export default function Home() {
 
               <FadeInSection delay={600}>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                  <button className="btn-primary">
                     Jetzt beraten lassen
                   </button>
-                  <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+                  <button className="btn-secondary">
                     Services entdecken
                   </button>
                 </div>
@@ -180,7 +180,7 @@ export default function Home() {
             {/* Left Column - Title */}
             <div className="lg:col-span-1">
               <FadeInSection>
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">
+                <h2 className="text-3xl font-heading font-bold text-english-violet mb-6">
                   Wir überzeugen durch…
                 </h2>
               </FadeInSection>
@@ -204,13 +204,13 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-20 gradient-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <FadeInSection>
               <div className="text-white">
-                <h2 className="text-3xl font-bold mb-6">Wir sind für Sie da.</h2>
-                <p className="text-xl text-blue-100 leading-relaxed">
+                <h2 className="text-3xl font-heading font-bold mb-6">Wir sind für Sie da.</h2>
+                <p className="text-xl text-uranian-blue leading-relaxed font-body">
                   In unserem Servicecenter erhalten Sie eine individuelle Beratung, 
                   also auch kompetente Servicedienstleistungen direkt am Telefon. 
                   Profitieren Sie von unserer freundlichen und schnellen Unterstützung.
@@ -224,22 +224,22 @@ export default function Home() {
                   <div className="flex items-center space-x-3">
                     <span className="text-2xl">📞</span>
                     <div>
-                      <p className="font-semibold">Beratung</p>
-                      <p className="text-blue-100">0821 999 599 87</p>
+                      <p className="font-heading font-semibold">Beratung</p>
+                      <p className="text-uranian-blue font-body">0821 999 599 87</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-2xl">🛠️</span>
                     <div>
-                      <p className="font-semibold">Services</p>
-                      <p className="text-blue-100">0821 999 599 88</p>
+                      <p className="font-heading font-semibold">Services</p>
+                      <p className="text-uranian-blue font-body">0821 999 599 88</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
                     <span className="text-2xl">✉️</span>
                     <div>
-                      <p className="font-semibold">Email</p>
-                      <p className="text-blue-100">support@unit.cloud</p>
+                      <p className="font-heading font-semibold">Email</p>
+                      <p className="text-uranian-blue font-body">support@unit.cloud</p>
                     </div>
                   </div>
                 </div>
@@ -250,12 +250,12 @@ export default function Home() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-slate-gray/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInSection>
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">Unsere Services</h2>
-              <p className="text-xl text-gray-600">Entdecken Sie unser umfassendes Leistungsspektrum</p>
+              <h2 className="text-4xl font-heading font-bold text-english-violet mb-4">Unsere Services</h2>
+              <p className="text-xl text-slate-gray font-body">Entdecken Sie unser umfassendes Leistungsspektrum</p>
             </div>
           </FadeInSection>
 
@@ -277,7 +277,7 @@ export default function Home() {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeInSection>
-              <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+              <h2 className="text-3xl font-heading font-bold text-center text-english-violet mb-12">
                 Einblicke in unsere Arbeit
               </h2>
             </FadeInSection>

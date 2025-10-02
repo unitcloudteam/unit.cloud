@@ -1,26 +1,166 @@
 @import "tailwindcss";
 
 :root {
+  /* Brand Color Palette */
+  --slate-gray: #687F96;
+  --uranian-blue: #A5D8FF;
+  --yellow-green: #C0D162;
+  --english-violet: #3F3047;
+  --engineering-orange: #BA2D0B;
+  
+  /* Typography Variables */
+  --font-heading: var(--font-jura);
+  --font-body: var(--font-slabo);
+  --font-alternative: var(--font-andika);
+  
+  /* Background and Foreground */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #3F3047;
 }
 
 @theme inline {
+  /* Brand Colors */
+  --color-slate-gray: var(--slate-gray);
+  --color-uranian-blue: var(--uranian-blue);
+  --color-yellow-green: var(--yellow-green);
+  --color-english-violet: var(--english-violet);
+  --color-engineering-orange: var(--engineering-orange);
+  
+  /* Typography */
+  --font-heading: var(--font-jura);
+  --font-body: var(--font-slabo);
+  --font-alternative: var(--font-andika);
+  
+  /* System Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Typography Classes */
+.font-heading {
+  font-family: var(--font-jura), sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.font-body {
+  font-family: var(--font-slabo), serif;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.font-alternative {
+  font-family: var(--font-andika), sans-serif;
+  font-weight: 400;
+}
+
+/* Brand Color Classes */
+.text-slate-gray { color: var(--slate-gray); }
+.text-uranian-blue { color: var(--uranian-blue); }
+.text-yellow-green { color: var(--yellow-green); }
+.text-english-violet { color: var(--english-violet); }
+.text-engineering-orange { color: var(--engineering-orange); }
+
+.bg-slate-gray { background-color: var(--slate-gray); }
+.bg-uranian-blue { background-color: var(--uranian-blue); }
+.bg-yellow-green { background-color: var(--yellow-green); }
+.bg-english-violet { background-color: var(--english-violet); }
+.bg-engineering-orange { background-color: var(--engineering-orange); }
+
+.border-slate-gray { border-color: var(--slate-gray); }
+.border-uranian-blue { border-color: var(--uranian-blue); }
+.border-yellow-green { border-color: var(--yellow-green); }
+.border-english-violet { border-color: var(--english-violet); }
+.border-engineering-orange { border-color: var(--engineering-orange); }
+
+/* Gradient Classes */
+.gradient-brand {
+  background: linear-gradient(135deg, var(--uranian-blue) 0%, var(--slate-gray) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, var(--yellow-green) 0%, var(--engineering-orange) 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, var(--english-violet) 0%, var(--slate-gray) 100%);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--english-violet);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+/* Button Styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--uranian-blue) 0%, var(--slate-gray) 100%);
+  color: white;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(165, 216, 255, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--english-violet);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  border: 2px solid var(--english-violet);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--english-violet);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Card Styles */
+.card-brand {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(104, 127, 150, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card-brand:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
 }
